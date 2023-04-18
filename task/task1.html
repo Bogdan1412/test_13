@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h2>Пусть x0=1,xi=xi-1+2i,где i=1,2,... Определить . Решить с использованием рекурсивных и нерекурсивных алгоритмов</h2>
+	<script>
+		// Solution using recursive algorithm
+		function recursiveSum(x) {
+			if (x === 0) return 1
+			else return recursiveSum(x - 1) + 2 * x
+		}
+		console.log(recursiveSum(7));
+
+		// Not using recursing
+		function notRecursiveSum(x) {
+			let sum = 1
+			for (let i = 1; i <= x; i++) {
+				sum += 2 * i
+			}
+			return sum
+		}
+		console.log(notRecursiveSum(7))
+	</script>
+</body>
+
+</html>

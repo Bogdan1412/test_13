@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h2>Задача 4. С использованием замыканий разработать итератор, то есть функцию, которая будет постепенно по отдельным вызовам выдавать по одной букве заранее заданного слова. С использованием него разработать игру «Преводитель». Выводим пользовательское описание этого слова и по одну букву пользователь вводит перевод этого слова. Подсчитать количество упомянутых букв.</h2>
+	<script>
+
+		alert('Who is now president of Ukraine 2023 surname?')
+
+		function letterIterator(word) {
+			let start = 0
+			let end = word.length
+			let sum
+			function getLetter() {
+				return start < end ? sum = word[start] : start++
+			}
+			return getLetter
+		}
+
+		function startGame(letter, word) {
+			let count = 0
+			let userLetter
+			for (let i = 0; i < word.length; i++) {
+				userLetter = prompt('Enter letter')
+				if (letter() === userLetter) count++
+			}
+			return count
+		}
+
+		const prezidentUkraine = 'zelensky'
+		const letter = letterIterator(prezidentUkraine)
+		const resultGame = startGame(letter, prezidentUkraine)
+
+		document.getElementById('result').textContent = `You guessed ${resultGame} letters correctly.`
+	</script>
+</body>
+
+</html>

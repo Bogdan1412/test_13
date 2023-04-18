@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h2>Задача 3. При использовании замыканий разработать итератор, то есть функцию, которая будет постепенно по отдельным вызовам выдавать по одному значению от заданного минимального до заданного максимального. Если значение достигнет максимального, следующим будет минимальное значение. При использовании этой функции реализовать перебор номеров месяцев.</h2>
+	<script>
+		function monthIterator(minValue, maxValue) {
+			let currentMonth = minValue
+			function nextMonthCounter() {
+				if (currentMonth <= maxValue) return currentMonth++
+				else return minValue
+			}
+			return nextMonthCounter
+		}
+		let iterationMonth = monthIterator(1, 12)
+		for (let i = 1; i <= 12; i++) {
+			document.write(`<br>${iterationMonth()}`)
+		}
+
+		// function monthIterator() {
+		// 	let currentMonth = 0
+		// 	let minMonth = 1
+		// 	let maxMonth = 12
+		// 	function nextMonth() {
+		// 		return currentMonth >= maxMonth ? currentMonth = minMonth : currentMonth++
+		// 	}
+		// 	return nextMonth
+		// }
+		// const getNextMonth = monthIterator()
+		// for (let i = 1; i <= 12; i++) {
+		// 	document.write(`<br>${getNextMonth()}`)
+		// }
+	</script>
+</body>
+
+</html>

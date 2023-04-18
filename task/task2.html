@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h2> Задача 2. Пусть x(0) =1, x(1)=x(i-1)+ 2 * x(i-2), где i = 2,3.... . Определить. Решить с использованием рекурсивных и нерекурсивных алгоритмов </h2>
+	<script>
+		// Solution using recursive algorithm
+		function getRecursuveSum(n) {
+			if (n <= 1) return 1
+			else return getRecursuveSum(n - 1) + 2 * getRecursuveSum(n - 2)
+		}
+		console.log(getRecursuveSum(7))
+
+		// Not using recursing
+		function getNotRecursiveSum(n) {
+			let x_0 = 1
+			let x_1 = 1
+			let x_n
+			for (let i = 2; i <= n; i++) {
+				x_n = x_1 + 2 * x_0
+				x_0 = x_1
+				x_1 = x_n
+			}
+			return x_n
+		}
+		console.log(getNotRecursiveSum(7))
+	</script>
+</body>
+
+</html>

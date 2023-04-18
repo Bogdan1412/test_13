@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<h2>Задача 5. Тренажер сложения. Каждые 10 секунд пользователю задают случайный пример добавления двух цифр и делается проверка.</h2>
+	<script>
+		function getRandomNumber(minV, maxV) {
+			return minV + Math.floor(Math.random() * (maxV - minV + 1))
+		}
+		function getSumNumber(minNumber, maxNumber) {
+			let firstNumber = getRandomNumber(minNumber, maxNumber)
+			let secondNumber = getRandomNumber(minNumber, maxNumber)
+			let result
+			const sum = firstNumber + secondNumber
+			const userTry = parseInt(prompt(`how much will? ${firstNumber} + ${secondNumber}`))
+			if (sum === userTry) result = alert('Right')
+			else result = alert('Not right')
+			return result
+		}
+		setInterval(() => {
+			const result = getSumNumber(1, 50)
+		}, 1000);
+	</script>
+</body>
+
+</html>
